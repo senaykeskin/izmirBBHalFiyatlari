@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+FishesModels fishModelFromJson(String str) =>
+    FishesModels.fromJson(json.decode(str));
+
 class FishesModels {
   String? bultenTarihi;
   List<HalFiyatListesi>? halFiyatListesi;
@@ -52,11 +57,11 @@ class HalFiyatListesi {
         this.gorsel});
 
   HalFiyatListesi.fromJson(Map<String, dynamic> json) {
-    ortalamaUcret = json['OrtalamaUcret'];
+    ortalamaUcret = json['OrtalamaUcret']?.toDouble();
     malAdi = json['MalAdi'];
     birim = json['Birim'];
-    asgariUcret = json['AsgariUcret'];
-    azamiUcret = json['AzamiUcret'];
+    asgariUcret = json['AsgariUcret']?.toDouble();
+    azamiUcret = json['AzamiUcret']?.toDouble();
     malId = json['MalId'];
     tarih = json['tarih'];
     halTuru = json['HalTuru'];
@@ -64,6 +69,7 @@ class HalFiyatListesi {
     malTipAdi = json['MalTipAdi'];
     gorsel = json['Gorsel'];
   }
+
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+FruitsAndVegetablesModels fruitModelFromJson(String str) =>
+    FruitsAndVegetablesModels.fromJson(json.decode(str));
+
 class FruitsAndVegetablesModels {
   String? bultenTarihi;
   List<HalFiyatListesi>? halFiyatListesi;
@@ -32,27 +37,28 @@ class HalFiyatListesi {
   int? asgariUcret;
   int? azamiUcret;
   int? malId;
-  Null tarih;
+  dynamic tarih;
   int? halTuru;
   int? malTipId;
   String? malTipAdi;
   String? gorsel;
 
-  HalFiyatListesi(
-      {this.ortalamaUcret,
-        this.malAdi,
-        this.birim,
-        this.asgariUcret,
-        this.azamiUcret,
-        this.malId,
-        this.tarih,
-        this.halTuru,
-        this.malTipId,
-        this.malTipAdi,
-        this.gorsel});
+  HalFiyatListesi({
+    this.ortalamaUcret,
+    this.malAdi,
+    this.birim,
+    this.asgariUcret,
+    this.azamiUcret,
+    this.malId,
+    this.tarih,
+    this.halTuru,
+    this.malTipId,
+    this.malTipAdi,
+    this.gorsel
+  });
 
   HalFiyatListesi.fromJson(Map<String, dynamic> json) {
-    ortalamaUcret = json['OrtalamaUcret'];
+    ortalamaUcret = json['OrtalamaUcret']?.toDouble();
     malAdi = json['MalAdi'];
     birim = json['Birim'];
     asgariUcret = json['AsgariUcret'];
