@@ -9,6 +9,7 @@ final imageBaseUrl = "https://www.bizizmir.com/YuklenenDosyalar/Hal//";
 const cardBackgroundColor = Colors.white;
 
 BorderRadius circularRadius(double value) => BorderRadius.circular(value);
+BorderRadius bottomSheetRadius(double value) => BorderRadius.only(topLeft: Radius.circular(value), topRight: Radius.circular(value));
 
 EdgeInsets paddingAll(double value) => EdgeInsets.all(value);
 EdgeInsets paddingTop(double value) => EdgeInsets.only(top: value);
@@ -20,7 +21,9 @@ class GeneralStrings {
   static const String fishes = "Balıklar";
   static const String fruits = "Meyveler";
   static const String vegetables = "Sebzeler";
+  static const String fish = "BALIK";
   static const String vegetable = "SEBZE";
   static const String fruit = "MEYVE";
   static const String seeAll = "Tümünü gör \u2794";
+  static const String searchProduct = "Ürün arayın";
 }
