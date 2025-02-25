@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izmir_bb_hal_fiyatlari/pages/categoryFullListPage/list_page.dart';
 import 'pages/HomePage/home_page.dart';
 
 void main() {
@@ -17,7 +18,6 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
               centerTitle: true,
               backgroundColor: Colors.transparent,
-              elevation: 0,
           )),
       home: const HomePage(),
     );
